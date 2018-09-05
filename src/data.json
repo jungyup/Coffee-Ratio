@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Americano",
+    "ingredient":
+        [
+          {
+            "type": "water",
+            "ratio": 7
+          },
+          {
+            "type": "espresso",
+            "ratio": 3
+          }
+        ]
+  },
+  {
+    "name": "Latte",
+    "ingredient":
+    [
+      {
+        "type": "milk",
+        "ratio": 7
+      },
+      {
+        "type": "espresso",
+        "ratio": 3
+      }
+    ]
+  },
+  {
+    "name": "Capuccino",
+    "ingredient":
+    [
+      {
+        "type": "milk",
+        "ratio": 7
+      },
+      {
+        "type": "espresso",
+        "ratio": 3
+      }
+    ]
+  },
+  {
+    "name": "Mocha",
+    "ingredient":
+    [
+      {
+        "type": "hot chocolate",
+        "ratio": "60%"
+      },
+      {
+        "type": "espresso",
+        "ratio": "40%"
+      }
+    ]
+  }
+]
