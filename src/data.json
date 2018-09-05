@@ -28,15 +28,19 @@
     ]
   },
   {
-    "name": "Capuccino",
+    "name": "Favourite",
     "ingredient":
     [
       {
         "type": "milk",
-        "ratio": 7
+        "ratio": 4
       },
       {
         "type": "espresso",
+        "ratio": 3
+      },
+      {
+        "type": "hot chocolate",
         "ratio": 3
       }
     ]
@@ -47,11 +51,11 @@
     [
       {
         "type": "hot chocolate",
-        "ratio": "60%"
+        "ratio": 6
       },
       {
         "type": "espresso",
-        "ratio": "40%"
+        "ratio": 4
       }
     ]
   }

@@ -31,6 +31,12 @@ button {
     line-height: 1.2rem;
 }
 
+img {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}
+
 /*.pie {*/
     /*width: 100px;*/
     /*height: 100px;*/
