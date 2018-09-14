@@ -51,56 +51,33 @@ class Home extends Component {
         super(props);
 
         this.state = {
-            espresso: 3,
             water: 3,
             milk: 3,
-            hotChocolate: 1
+            espresso: 3,
+            hotChocolate: 3
         };
     }
 
     checkRatio = (value) => {
-        // console.log(data);
         let temp;
 
-        if (value === 'Americano') {
-            temp = data[1].ingredient;
+        this.setState({
+            water: 0,
+            milk: 0,
+            espresso: 0,
+            hotChocolate: 0
+        });
 
-            this.setState({
-                water: temp[0].ratio,
-                espresso: temp[1].ratio,
-                milk: 0,
-                hotChocolate: 0
-            });
-        } else if (value === 'Latte') {
-            temp = data[1].ingredient;
-
-            this.setState({
-                milk: temp[0].ratio,
-                espresso: temp[1].ratio,
-                water: 0,
-                hotChocolate: 0
-            });
-        } else if (value === 'Mocha') {
-            temp = data[3].ingredient;
-            console.log(temp);
-            this.setState({
-                milk: 0,
-                espresso: temp[1].ratio,
-                hotChocolate: temp[0].ratio,
-                water: 0
-            });
-        } else if (value === 'Favourite') {
-            temp = data[2].ingredient;
-
-            this.setState({
-                milk: temp[0].ratio,
-                espresso: temp[1].ratio,
-                hotChocolate: temp[2].ratio,
-                water: 0
-            });
-        }
-        else {
-            document.getElementById('result').innerHTML = "Please check your button name";
+        for (let i = 0; i < data.length; i++) {
+            if (value === data[i].name) {
+                temp = data[i].ingredient;
+                console.log(temp);
+                for (let j = 0; j < temp.length; j++) {
+                    this.setState({
+                       [temp[j].type]: temp[j].ratio
+                    });
+                }
+            }
         }
     };
 
@@ -132,7 +109,7 @@ class Home extends Component {
                               <figcaption>Mocha</figcaption>
                           </button>
                           <button onClick={()=>this.checkRatio('Favourite')}>
-                              <img src="https://www.nespresso.com/ncp/res/resized/w720/uploads/recipes/28578e5a6c40dbb0c9b02f046f670e82b2b9ddd8.jpg" alt="My Favourite" />
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe0rhQA7RKBFZZdx_di_9KI-D48R1TPHNDKmrtPzQh-IWpsukH" alt="My Favourite" />
                               <figcaption>My Favourite</figcaption>
                           </button>
                       </div>
@@ -141,7 +118,7 @@ class Home extends Component {
                           <div>
                               <Chart
                                   chartType="PieChart"
-                                  data={[["Age", "Weight"], milk, espresso, water, hotChocolate]}
+                                  data={[["Ingredient", "Type"], milk, espresso, water, hotChocolate]}
                                   options={coffeePieChart}
                                   graph_id="PieChart"
                                   width={"100%"}
@@ -158,3 +135,46 @@ class Home extends Component {
 }
 
 export default Home;
+
+// changed from previous commit
+
+// if (value === 'Americano') {
+//     temp = data[1].ingredient;
+//
+//     this.setState({
+//         water: temp[0].ratio,
+//         espresso: temp[1].ratio,
+//         milk: 0,
+//         hotChocolate: 0
+//     });
+// } else if (value === 'Latte') {
+//     temp = data[1].ingredient;
+//
+//     this.setState({
+//         milk: temp[0].ratio,
+//         espresso: temp[1].ratio,
+//         water: 0,
+//         hotChocolate: 0
+//     });
+// } else if (value === 'Mocha') {
+//     temp = data[3].ingredient;
+//     console.log(temp);
+//     this.setState({
+//         milk: 0,
+//         espresso: temp[1].ratio,
+//         hotChocolate: temp[0].ratio,
+//         water: 0
+//     });
+// } else if (value === 'Favourite') {
+//     temp = data[2].ingredient;
+//
+//     this.setState({
+//         milk: temp[0].ratio,
+//         espresso: temp[1].ratio,
+//         hotChocolate: temp[2].ratio,
+//         water: 0
+//     });
+// }
+// else {
+//     document.getElementById('result').innerHTML = "Please check your button name";
+// }

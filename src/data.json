@@ -40,7 +40,7 @@
         "ratio": 3
       },
       {
-        "type": "hot chocolate",
+        "type": "hotChocolate",
         "ratio": 3
       }
     ]
@@ -50,7 +50,7 @@
     "ingredient":
     [
       {
-        "type": "hot chocolate",
+        "type": "hotChocolate",
         "ratio": 6
       },
       {
