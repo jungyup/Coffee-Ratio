@@ -4,7 +4,6 @@ import * as data from './data';
 
 import './style.css';
 
-// const data = require('json!./data');
 console.log(data);
 
 // Initial Pie Chart
@@ -61,24 +60,25 @@ class Home extends Component {
     checkRatio = (value) => {
         let temp;
 
-        this.setState({
+        const rates = {
             water: 0,
             milk: 0,
             espresso: 0,
             hotChocolate: 0
-        });
+        };
+
 
         for (let i = 0; i < data.length; i++) {
             if (value === data[i].name) {
                 temp = data[i].ingredient;
                 console.log(temp);
                 for (let j = 0; j < temp.length; j++) {
-                    this.setState({
-                       [temp[j].type]: temp[j].ratio
-                    });
+                    rates[temp[j].type] = temp[j].ratio;
                 }
             }
         }
+
+        this.setState(rates);
     };
 
     render() {
@@ -135,46 +135,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// changed from previous commit
-
-// if (value === 'Americano') {
-//     temp = data[1].ingredient;
-//
-//     this.setState({
-//         water: temp[0].ratio,
-//         espresso: temp[1].ratio,
-//         milk: 0,
-//         hotChocolate: 0
-//     });
-// } else if (value === 'Latte') {
-//     temp = data[1].ingredient;
-//
-//     this.setState({
-//         milk: temp[0].ratio,
-//         espresso: temp[1].ratio,
-//         water: 0,
-//         hotChocolate: 0
-//     });
-// } else if (value === 'Mocha') {
-//     temp = data[3].ingredient;
-//     console.log(temp);
-//     this.setState({
-//         milk: 0,
-//         espresso: temp[1].ratio,
-//         hotChocolate: temp[0].ratio,
-//         water: 0
-//     });
-// } else if (value === 'Favourite') {
-//     temp = data[2].ingredient;
-//
-//     this.setState({
-//         milk: temp[0].ratio,
-//         espresso: temp[1].ratio,
-//         hotChocolate: temp[2].ratio,
-//         water: 0
-//     });
-// }
-// else {
-//     document.getElementById('result').innerHTML = "Please check your button name";
-// }
